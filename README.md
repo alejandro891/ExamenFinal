@@ -129,6 +129,40 @@ Gracias por jugar.
 - [x] Dibujo visual dinámico del ahorcado
 - [x] Resumen de estadísticas al finalizar
 
-imagenes:
+## Capturas de pantalla 
+- ejecutamos: y nos dice que ingresemos una letra y nos da una pista para adivinar la palabra.
+  
 ![image](https://github.com/user-attachments/assets/b97ec950-a9bd-441a-ad38-4a2f30e77f78)
+
+- Ingresamos por teclado una letra y cada letra ingresada la va mostrando
+  
+![image](https://github.com/user-attachments/assets/143a9a71-47cd-4c4e-af79-e7a0e4f1f093)
+
+- Si la letra esta en la palabra marca como correcta :)
+  
+![image](https://github.com/user-attachments/assets/681062f9-8119-4c47-a7d8-5f3c7aa41312)
+
+- Si ingresa una letra y no esta la palabra marca como incorrecta :(
+ 
+![image](https://github.com/user-attachments/assets/70b57d23-04b5-420a-bd4d-22594548f878)
+
+- Y si ingresa mas de una letra o un numero, le dice al usuario que ingrese un letra
+ 
+![image](https://github.com/user-attachments/assets/1eadfdb4-16de-4268-826a-a008aab3854d)
+
+- El programa sigue con el mismo orden hasta que adivine la palabra o se complete el ahorcado y le pregunta al usuario si desea jugar otra vez con (s/n)
+ 
+![image](https://github.com/user-attachments/assets/7f760a2f-40a3-47de-acfc-42c6e7d3efda)
+![image](https://github.com/user-attachments/assets/c17f2fcc-c7fd-4d1c-acbf-3785f93c9fc0)
+
+- Si el usuario ingresa n, le va a mostrar cuantas partidas gano y perdio.
+
+![image](https://github.com/user-attachments/assets/ce4b6dc9-5d82-47cc-9630-cb6fd89dac24)
+
+
+
+
+
+
+
 
