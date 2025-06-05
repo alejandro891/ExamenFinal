@@ -1,7 +1,7 @@
 #  Proyecto Final – *Juego del Ahorcado (Multicapa en Java)*
 
 ##  Nombre del Proyecto
-**"Ahorcado Plus"** – Juego clásico del ahorcado desarrollado con estructura multicapa orientada a objetos en Java.
+**" Juego del Ahorcado "** – Juego clásico del ahorcado desarrollado con estructura multicapa orientada a objetos en Java.
 
 ##  Integrantes del Grupo y Roles
 
@@ -15,10 +15,10 @@
 ##  Descripción del problema y solución propuesta
 
 **Problema:**  
-Desarrollar una aplicación interactiva que permita jugar al clásico juego del *Ahorcado*, con seguimiento de partidas ganadas y perdidas, selección aleatoria de palabras y validación de entradas del usuario.
+Desarrollar un programa interactivo que permita jugar al clásico juego del *Ahorcado*, con seguimiento de partidas ganadas y perdidas, selección aleatoria de palabras y validación de entradas del usuario.
 
 **Solución:**  
-Se propuso una aplicación en **Java orientada a objetos**, que separa responsabilidades en distintas clases distribuidas en capas: modelo, servicio, vista y utilidades. Cada clase cumple una función específica y reutilizable, facilitando el mantenimiento y escalabilidad del sistema.
+Se propuso un programa en **Java orientada a objetos**, que separa responsabilidades en distintas clases distribuidas en capas: modelo, servicio, vista y utilidades. Cada clase cumple una función específica y reutilizable, facilitando el mantenimiento y escalabilidad del sistema.
 
 ##  Estructura del Proyecto y Explicación de Clases
 
@@ -60,10 +60,10 @@ src/
 
 1. **Clona o descarga** el repositorio:
    \`\`\`bash
-   git clone https://github.com/tuusuario/ahorcado-plus.git
+   git clone https://github.com/alejandro891/ExamenFinal.git
    \`\`\`
 
-2. **Abre la carpeta en VSCode** o cualquier IDE de Java (Eclipse, IntelliJ, etc.)
+2. **Abre la carpeta en VSCode** 
 
 3. **Estructura de carpetas esperada:**
 
@@ -73,19 +73,20 @@ src/
      servicio/
      util/
      vista/
+     main.java
    \`\`\`
 
-4. **Compila los archivos:**
+5. **Compila los archivos:**
 
    Si estás usando terminal, desde la carpeta `src`:
    \`\`\`bash
    javac modelo/*.java servicio/*.java util/*.java vista/*.java
    \`\`\`
 
-5. **Ejecuta el programa:**
+6. **Ejecuta el programa:**
 
-   \`\`\`bash
-   java vista.ConsolaVista
+   \`\`\`
+   ejecuta el programa oprimiendo AltGr + f5
    \`\`\`
 
 ##  Ejemplos de uso
@@ -127,3 +128,7 @@ Gracias por jugar.
 - [x] Reutilización de métodos (`actualizarProgreso`, `leerLetra`)
 - [x] Dibujo visual dinámico del ahorcado
 - [x] Resumen de estadísticas al finalizar
+
+imagenes:
+![image](https://github.com/user-attachments/assets/b97ec950-a9bd-441a-ad38-4a2f30e77f78)
+
