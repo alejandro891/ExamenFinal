@@ -39,7 +39,7 @@ src/
     └── ConsolaVista.java        # Main que lanza la app
 \`\`\`
 
-### 📘 Clases Principales
+###  Clases Principales
 
 - **`PalabraSecreta`**  
   Representa la palabra a adivinar y su pista. Usa encapsulamiento.
@@ -56,7 +56,7 @@ src/
 - **`ConsolaVista`**  
   Clase principal que crea el jugador y ejecuta el flujo del juego.
 
-## 🧪 Instrucciones para Ejecutar el Programa
+##  Instrucciones para Ejecutar el Programa
 
 1. **Clona o descarga** el repositorio:
    \`\`\`bash
@@ -88,11 +88,11 @@ src/
    java vista.ConsolaVista
    \`\`\`
 
-## 🖼️ Ejemplos de uso
+##  Ejemplos de uso
 
 \`\`\`
 === NUEVA PARTIDA DEL AHORCADO ===
-💡 Escribes código para resolver problemas.
+ Escribes código para resolver problemas.
 
  +---+
  |   |
@@ -118,7 +118,7 @@ Perdidas: 1
 Gracias por jugar.
 \`\`\`
 
-## ✅ Características implementadas
+##  Características implementadas
 
 - [x] Herencia (`Jugador` extiende `Persona`)
 - [x] Encapsulamiento (atributos privados, getters/setters)
