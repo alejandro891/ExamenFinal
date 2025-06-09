@@ -17,52 +17,38 @@ public class JuegoServicio {
         new PalabraSecreta("ESPADA", "💡 Arma medieval de filo largo.")
     };
 
-    private final Random random = new Random();
     private final Scanner scanner = new Scanner(System.in);
+    private final Random random = new Random();
 
     public void iniciarJuego(Jugador jugador) {
-        boolean seguirJugando;
-        do {
-            jugarRonda(jugador);
-            seguirJugando = preguntarRepetir();
-        } while (seguirJugando);
+        do jugarRonda(jugador);
+        while (preguntarRepetir());
         mostrarResumen(jugador);
     }
 
-    private PalabraSecreta seleccionarPalabra() {
-        return PALABRAS[random.nextInt(PALABRAS.length)];
-    }
-
     private void jugarRonda(Jugador jugador) {
-        PalabraSecreta palabraSecreta = seleccionarPalabra();
-        String palabra = palabraSecreta.getTexto();
-        String pista = palabraSecreta.getPista();
-
-        char[] progreso = new char[palabra.length()];
-        Arrays.fill(progreso, '_');
-        Set<Character> letrasUsadas = new HashSet<>();
+        PalabraSecreta ps = PALABRAS[random.nextInt(PALABRAS.length)];
+        String palabra = ps.getTexto();
+        char[] progreso = "_".repeat(palabra.length()).toCharArray();
+        Set<Character> usadas = new HashSet<>();
         int errores = 0;
 
-        System.out.println("\n=== NUEVA PARTIDA DEL AHORCADO ===");
-        System.out.println(pista);
+        System.out.println("\n=== NUEVA PARTIDA DEL AHORCADO ===\n" + ps.getPista());
 
         while (errores < MAX_ERRORES && new String(progreso).contains("_")) {
-            Dibujador.mostrarEstado(progreso, letrasUsadas, errores);
+            Dibujador.mostrarEstado(progreso, usadas, errores);
             char letra = leerLetra();
 
-            if (letrasUsadas.contains(letra)) {
+            if (!usadas.add(letra)) {
                 System.out.println("Ya ingresaste esa letra.");
                 continue;
             }
 
-            letrasUsadas.add(letra);
-            boolean acierto = actualizarProgreso(palabra, progreso, letra);
-
-            if (acierto) {
+            if (actualizarProgreso(palabra, progreso, letra)) {
                 System.out.println("¡Letra correcta!");
             } else {
-                errores++;
                 System.out.println("Letra incorrecta.");
+                errores++;
             }
         }
 
@@ -78,46 +64,36 @@ public class JuegoServicio {
 
     private boolean actualizarProgreso(String palabra, char[] progreso, char letra) {
         boolean acierto = false;
-        for (int i = 0; i < palabra.length(); i++) {
+        for (int i = 0; i < palabra.length(); i++)
             if (palabra.charAt(i) == letra) {
                 progreso[i] = letra;
                 acierto = true;
             }
-        }
         return acierto;
     }
 
     private char leerLetra() {
         while (true) {
-            try {
-                System.out.print("Ingresa una letra: ");
-                String input = scanner.nextLine().toUpperCase();
-
-                if (input.length() != 1 || !Character.isLetter(input.charAt(0))) {
-                    throw new InputMismatchException("Entrada inválida. Escribe una sola letra.");
-                }
-
+            System.out.print("Ingresa una letra: ");
+            String input = scanner.nextLine().trim().toUpperCase();
+            if (input.length() == 1 && Character.isLetter(input.charAt(0)))
                 return input.charAt(0);
-            } catch (InputMismatchException e) {
-                System.out.println(" " + e.getMessage());
-            }
+            System.out.println(" Entrada inválida. Escribe una sola letra.");
         }
     }
 
     private boolean preguntarRepetir() {
         while (true) {
             System.out.print("\n¿Quieres jugar otra vez? (s/n): ");
-            String respuesta = scanner.nextLine().trim().toLowerCase();
-            if (respuesta.equals("s")) return true;
-            if (respuesta.equals("n")) return false;
-            System.out.println("⚠ Opción inválida. Escribe 's' o 'n'.");
+            String r = scanner.nextLine().trim().toLowerCase();
+            if (r.equals("s")) return true;
+            if (r.equals("n")) return false;
+            System.out.println(" Opción inválida. Escribe 's' o 'n'.");
         }
     }
 
-    private void mostrarResumen(Jugador jugador) {
-        System.out.println("\nResumen de partidas:");
-        System.out.println("Ganadas: " + jugador.getPartidasGanadas());
-        System.out.println("Perdidas: " + jugador.getPartidasPerdidas());
-        System.out.println("Gracias por jugar.");
+    private void mostrarResumen(Jugador j) {
+        System.out.println("\nResumen de partidas:\nGanadas: " + j.getPartidasGanadas() +
+                           "\nPerdidas: " + j.getPartidasPerdidas() + "\nGracias por jugar.");
     }
 }
