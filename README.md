@@ -22,22 +22,8 @@ Se propuso un programa en **Java orientada a objetos**, que separa responsabilid
 
 ##  Estructura del Proyecto y Explicación de Clases
 
-\`\`\`
-src/
-├── modelo/
-│   ├── PalabraSecreta.java      # Clase que almacena palabra y pista
-│   ├── Persona.java             # Clase base con estadísticas
-│   └── Jugador.java             # Hereda de Persona
-│
-├── servicio/
-│   └── JuegoServicio.java       # Lógica del juego (flujo principal)
-│
-├── util/
-│   └── Dibujador.java           # Dibuja el ahorcado y muestra estado
-│
-└── vista/
-    └── ConsolaVista.java        # Main que lanza la app
-\`\`\`
+![image](https://github.com/user-attachments/assets/150d975b-5a36-441d-bba5-40cc6b757048)
+
 
 ###  Clases Principales
 
