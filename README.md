@@ -8,8 +8,7 @@
 | Nombre                | Rol                             |
 |------------------------|----------------------------------|
 | Persona 1             | Modelo de datos (`PalabraSecreta`, `Jugador`) |
-| Persona 2             | Lógica de negocio (`JuegoServicio`) |
-| Persona 3             | Interfaz visual de consola (`ConsolaVista`) |
+| Persona 2 y 3             | Lógica de negocio (`JuegoServicio`) |
 | Persona 4             | Utilidades y validación (`Dibujador`) |
 
 ##  Descripción del problema y solución propuesta
