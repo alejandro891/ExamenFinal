@@ -9,12 +9,12 @@ import java.util.*;
 public class JuegoServicio {
     private static final int MAX_ERRORES = 6;
     private static final PalabraSecreta[] PALABRAS = {
-        new PalabraSecreta("PROGRAMACION", "💡 Escribes código para resolver problemas."),
-        new PalabraSecreta("JAVA", "💡 Lenguaje de programación popular con clases."),
-        new PalabraSecreta("DINOSAURIO", "💡 Animal prehistórico gigantesco."),
-        new PalabraSecreta("CASTILLO", "💡 Fortaleza antigua con torres."),
-        new PalabraSecreta("MAGIA", "💡 Arte de hechicería o ilusionismo."),
-        new PalabraSecreta("ESPADA", "💡 Arma medieval de filo largo.")
+        new PalabraSecreta("PROGRAMACION", " Escribes código para resolver problemas."),
+        new PalabraSecreta("JAVA", " Lenguaje de programación popular con clases."),
+        new PalabraSecreta("DINOSAURIO", " Animal prehistórico gigantesco."),
+        new PalabraSecreta("CASTILLO", " Fortaleza antigua con torres."),
+        new PalabraSecreta("MAGIA", " Arte de hechicería o ilusionismo."),
+        new PalabraSecreta("ESPADA", " Arma medieval de filo largo.")
     };
 
     private final Scanner scanner = new Scanner(System.in);
@@ -27,13 +27,13 @@ public class JuegoServicio {
     }
 
     private void jugarRonda(Jugador jugador) {
-        PalabraSecreta ps = PALABRAS[random.nextInt(PALABRAS.length)];
-        String palabra = ps.getTexto();
+        PalabraSecreta Pista = PALABRAS[random.nextInt(PALABRAS.length)];
+        String palabra = Pista.getTexto();
         char[] progreso = "_".repeat(palabra.length()).toCharArray();
         Set<Character> usadas = new HashSet<>();
         int errores = 0;
 
-        System.out.println("\n=== NUEVA PARTIDA DEL AHORCADO ===\n" + ps.getPista());
+        System.out.println("\n=== NUEVA PARTIDA DEL AHORCADO ===\n" + Pista.getPista());
 
         while (errores < MAX_ERRORES && new String(progreso).contains("_")) {
             Dibujador.mostrarEstado(progreso, usadas, errores);
@@ -78,22 +78,22 @@ public class JuegoServicio {
             String input = scanner.nextLine().trim().toUpperCase();
             if (input.length() == 1 && Character.isLetter(input.charAt(0)))
                 return input.charAt(0);
-            System.out.println(" Entrada inválida. Escribe una sola letra.");
+            System.out.println(" Entrada inválida. Escribe una letra.");
         }
     }
 
     private boolean preguntarRepetir() {
         while (true) {
             System.out.print("\n¿Quieres jugar otra vez? (s/n): ");
-            String r = scanner.nextLine().trim().toLowerCase();
-            if (r.equals("s")) return true;
-            if (r.equals("n")) return false;
+            String Repetir = scanner.nextLine().trim().toLowerCase();
+            if (Repetir.equals("s")) return true;
+            if (Repetir.equals("n")) return false;
             System.out.println(" Opción inválida. Escribe 's' o 'n'.");
         }
     }
 
-    private void mostrarResumen(Jugador j) {
-        System.out.println("\nResumen de partidas:\nGanadas: " + j.getPartidasGanadas() +
-                           "\nPerdidas: " + j.getPartidasPerdidas() + "\nGracias por jugar.");
+    private void mostrarResumen(Jugador Jugadas) {
+        System.out.println("\nResumen de partidas:\nGanadas: " + Jugadas.getPartidasGanadas() +
+                           "\nPerdidas: " + Jugadas.getPartidasPerdidas() + "\nGracias por jugar.");
     }
 }
