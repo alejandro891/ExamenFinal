@@ -9,12 +9,12 @@ import java.util.*;
 public class JuegoServicio {
     private static final int MAX_ERRORES = 6;
     private static final PalabraSecreta[] PALABRAS = {
-        new PalabraSecreta("PROGRAMACION", " Escribes código para resolver problemas."),
-        new PalabraSecreta("JAVA", " Lenguaje de programación popular con clases."),
-        new PalabraSecreta("DINOSAURIO", " Animal prehistórico gigantesco."),
-        new PalabraSecreta("CASTILLO", " Fortaleza antigua con torres."),
-        new PalabraSecreta("MAGIA", " Arte de hechicería o ilusionismo."),
-        new PalabraSecreta("ESPADA", " Arma medieval de filo largo.")
+        new PalabraSecreta("PROGRAMACION", "💡 Escribes código para resolver problemas."),
+        new PalabraSecreta("JAVA", "💡 Lenguaje de programación popular con clases."),
+        new PalabraSecreta("DINOSAURIO", "💡 Animal prehistórico gigantesco."),
+        new PalabraSecreta("CASTILLO", "💡 Fortaleza antigua con torres."),
+        new PalabraSecreta("MAGIA", "💡 Arte de hechicería o ilusionismo."),
+        new PalabraSecreta("ESPADA", "💡 Arma medieval de filo largo.")
     };
 
     private final Scanner scanner = new Scanner(System.in);
@@ -84,11 +84,11 @@ public class JuegoServicio {
 
     private boolean preguntarRepetir() {
         while (true) {
-            System.out.print("\n¿Quieres jugar otra vez? (s/n): ");
+            System.out.print("\n¿Quieres jugar otra vez? (si/no): ");
             String Repetir = scanner.nextLine().trim().toLowerCase();
-            if (Repetir.equals("s")) return true;
-            if (Repetir.equals("n")) return false;
-            System.out.println(" Opción inválida. Escribe 's' o 'n'.");
+            if (Repetir.equals("si")) return true;
+            if (Repetir.equals("no")) return false;
+            System.out.println(" Opción inválida. Escribe 'si' o 'no'.");
         }
     }
 
