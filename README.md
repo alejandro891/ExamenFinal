@@ -23,6 +23,9 @@ Se propuso un programa en **Java orientada a objetos**, que separa responsabilid
 
 ![image](https://github.com/user-attachments/assets/150d975b-5a36-441d-bba5-40cc6b757048)
 
+## DIAGRAMA ESTRUCTURAL UML 
+![image](https://github.com/user-attachments/assets/c2cabe9b-1d83-4adb-ae3d-984c1b4fb1cd)
+
 
 ###  Clases Principales
 
